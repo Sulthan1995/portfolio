@@ -14,10 +14,10 @@ const githubUser = computed(() => pick(props.site.social.github, /github\.com\/(
 const xUser = computed(() => pick(props.site.social.x, /(?:x\.com|twitter\.com)\/([^/?#]+)/i))
 const igUser = computed(() => pick(props.site.social.instagram, /instagram\.com\/([^/?#]+)/i))
 
-const linkedinSub = computed(() => (linkedinLine.value ? 'in/' + linkedinLine.value : 'Add profile URL'))
-const githubSub = computed(() => (githubUser.value ? '@' + githubUser.value : 'Add profile URL'))
-const xSub = computed(() => (xUser.value ? '@' + xUser.value : 'Add profile URL'))
-const igSub = computed(() => (igUser.value ? '@' + igUser.value : 'Add profile URL'))
+const linkedinSub = computed(() => (linkedinLine.value ? 'in/' + linkedinLine.value : ''))
+const githubSub = computed(() => (githubUser.value ? '@' + githubUser.value : ''))
+const xSub = computed(() => (xUser.value ? '@' + xUser.value : ''))
+const igSub = computed(() => (igUser.value ? '@' + igUser.value : ''))
 </script>
 
 <template>
@@ -58,7 +58,7 @@ const igSub = computed(() => (igUser.value ? '@' + igUser.value : 'Add profile U
       </div>
 
       <div class="contactPanel__right">
-        <a class="contactCard" :href="site.social.linkedin" target="_blank" rel="noopener noreferrer">
+        <a v-if="linkedinLine" class="contactCard" :href="site.social.linkedin" target="_blank" rel="noopener noreferrer">
           <div class="contactCard__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
@@ -70,7 +70,7 @@ const igSub = computed(() => (igUser.value ? '@' + igUser.value : 'Add profile U
           <div class="contactCard__value">{{ linkedinSub }}</div>
         </a>
 
-        <a class="contactCard" :href="site.social.github" target="_blank" rel="noopener noreferrer">
+        <a v-if="githubUser" class="contactCard" :href="site.social.github" target="_blank" rel="noopener noreferrer">
           <div class="contactCard__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
@@ -82,7 +82,7 @@ const igSub = computed(() => (igUser.value ? '@' + igUser.value : 'Add profile U
           <div class="contactCard__value">{{ githubSub }}</div>
         </a>
 
-        <a class="contactCard" :href="site.social.x" target="_blank" rel="noopener noreferrer">
+        <a v-if="xUser" class="contactCard" :href="site.social.x" target="_blank" rel="noopener noreferrer">
           <div class="contactCard__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
@@ -94,7 +94,7 @@ const igSub = computed(() => (igUser.value ? '@' + igUser.value : 'Add profile U
           <div class="contactCard__value">{{ xSub }}</div>
         </a>
 
-        <a class="contactCard" :href="site.social.instagram" target="_blank" rel="noopener noreferrer">
+        <a v-if="igUser" class="contactCard" :href="site.social.instagram" target="_blank" rel="noopener noreferrer">
           <div class="contactCard__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <rect x="6.2" y="6.2" width="11.6" height="11.6" rx="3.2" stroke-width="1.6" />

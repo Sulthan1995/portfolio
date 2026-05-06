@@ -10,7 +10,7 @@ import ProjectsSection from './components/ProjectsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 
 onMounted(() => {
-  document.documentElement.classList.add('portfolio-v5')
+  document.documentElement.classList.add('portfolio-v6')
 
   const nodes = document.querySelectorAll<HTMLElement>('.reveal')
   const io = new IntersectionObserver(
@@ -61,7 +61,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  document.documentElement.classList.remove('portfolio-v5')
+  document.documentElement.classList.remove('portfolio-v6')
 })
 </script>
 

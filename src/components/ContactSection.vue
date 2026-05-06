@@ -13,11 +13,6 @@ const linkedinLine = computed(() => pick(props.site.social.linkedin, /linkedin\.
 const githubUser = computed(() => pick(props.site.social.github, /github\.com\/([^/?#]+)/i))
 const xUser = computed(() => pick(props.site.social.x, /(?:x\.com|twitter\.com)\/([^/?#]+)/i))
 const igUser = computed(() => pick(props.site.social.instagram, /instagram\.com\/([^/?#]+)/i))
-
-const linkedinSub = computed(() => (linkedinLine.value ? 'in/' + linkedinLine.value : ''))
-const githubSub = computed(() => (githubUser.value ? '@' + githubUser.value : ''))
-const xSub = computed(() => (xUser.value ? '@' + xUser.value : ''))
-const igSub = computed(() => (igUser.value ? '@' + igUser.value : ''))
 </script>
 
 <template>
@@ -67,7 +62,6 @@ const igSub = computed(() => (igUser.value ? '@' + igUser.value : ''))
             </svg>
           </div>
           <div class="contactCard__label">LinkedIn</div>
-          <div class="contactCard__value">{{ linkedinSub }}</div>
         </a>
 
         <a v-if="githubUser" class="contactCard" :href="site.social.github" target="_blank" rel="noopener noreferrer">
@@ -79,7 +73,6 @@ const igSub = computed(() => (igUser.value ? '@' + igUser.value : ''))
             </svg>
           </div>
           <div class="contactCard__label">GitHub</div>
-          <div class="contactCard__value">{{ githubSub }}</div>
         </a>
 
         <a v-if="xUser" class="contactCard" :href="site.social.x" target="_blank" rel="noopener noreferrer">
@@ -91,7 +84,6 @@ const igSub = computed(() => (igUser.value ? '@' + igUser.value : ''))
             </svg>
           </div>
           <div class="contactCard__label">X</div>
-          <div class="contactCard__value">{{ xSub }}</div>
         </a>
 
         <a v-if="igUser" class="contactCard" :href="site.social.instagram" target="_blank" rel="noopener noreferrer">
@@ -106,7 +98,6 @@ const igSub = computed(() => (igUser.value ? '@' + igUser.value : ''))
             </svg>
           </div>
           <div class="contactCard__label">Instagram</div>
-          <div class="contactCard__value">{{ igSub }}</div>
         </a>
       </div>
     </div>

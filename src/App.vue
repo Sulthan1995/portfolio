@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { site } from './data/site'
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
@@ -9,8 +9,19 @@ import ExperienceSection from './components/ExperienceSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 
+const isLoading = ref(true)
+
 onMounted(() => {
   document.documentElement.classList.add('portfolio-v6')
+
+  const done = () => {
+    window.setTimeout(() => {
+      isLoading.value = false
+    }, 650)
+  }
+
+  if (document.readyState === 'complete') done()
+  else window.addEventListener('load', done, { once: true })
 
   const nodes = document.querySelectorAll<HTMLElement>('.reveal')
   const io = new IntersectionObserver(
@@ -67,6 +78,22 @@ onUnmounted(() => {
 
 <template>
   <div class="page">
+    <div
+      v-if="isLoading"
+      class="preloader"
+      role="status"
+      aria-live="polite"
+      aria-label="Loading"
+    >
+      <div class="preloader__stage">
+        <div class="preloader__orb" aria-hidden="true" />
+        <div class="preloader__hi" aria-hidden="true">Hi<span class="preloader__hiDots">..</span></div>
+        <div class="preloader__bar" aria-hidden="true">
+          <div class="preloader__barFill" />
+        </div>
+        <div class="preloader__label">100% loaded</div>
+      </div>
+    </div>
     <NavBar />
     <HeroSection :site="site" />
     <main>

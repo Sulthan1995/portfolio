@@ -102,6 +102,130 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(920px 620px at 50% 35%, rgba(168, 85, 247, 0.18) 0%, transparent 58%),
+    radial-gradient(820px 560px at 70% 75%, rgba(236, 72, 153, 0.12) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.85) 0%, rgba(2, 1, 8, 0.92) 60%, rgba(0, 0, 0, 0.88) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  animation: preloaderFadeIn 0.2s ease both;
+}
+
+.preloader__stage {
+  width: min(92vw, 38rem);
+  padding: 3.2rem 1.5rem 2.2rem;
+  text-align: center;
+}
+
+.preloader__orb {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 1.35rem;
+  border-radius: 22px;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+  background: rgba(13, 10, 28, 0.45);
+  box-shadow:
+    0 22px 60px rgba(76, 29, 149, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  position: relative;
+  transform: rotate(-8deg);
+}
+
+.preloader__orb::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
+  border-radius: 999px;
+  background: #60a5fa;
+  box-shadow: 0 0 0 6px rgba(96, 165, 250, 0.14), 0 0 24px rgba(96, 165, 250, 0.5);
+  animation: preloaderDot 1.6s ease-in-out infinite;
+}
+
+.preloader__hi {
+  font-family: var(--font-hero);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  font-size: clamp(3.2rem, 7vw, 5.2rem);
+  line-height: 1;
+  margin: 0 0 1.2rem;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 18px 60px rgba(76, 29, 149, 0.35);
+}
+
+.preloader__hiDots {
+  background: var(--v6-grad);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+.preloader__bar {
+  width: min(34rem, 88%);
+  height: 2px;
+  margin: 0 auto 1.05rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.preloader__barFill {
+  height: 100%;
+  width: 100%;
+  background: var(--v6-grad);
+  transform-origin: left;
+  animation: preloaderBar 0.85s ease both;
+}
+
+.preloader__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+@keyframes preloaderBar {
+  from {
+    transform: scaleX(0.06);
+    opacity: 0.7;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes preloaderDot {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+@keyframes preloaderFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 #app {
   min-height: 100vh;
   background: transparent;

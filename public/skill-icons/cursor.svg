@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- Cursor: simple isometric cube -->
+  <path fill="#E8E8EC" d="M128 44l80 46-80 46-80-46 80-46z"/>
+  <path fill="#BFC0C7" d="M48 90l80 46v92l-80-46V90z"/>
+  <path fill="#8D8F9A" d="M208 90l-80 46v92l80-46V90z"/>
+</svg>

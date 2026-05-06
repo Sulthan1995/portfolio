@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Windsurf">
+  <defs>
+    <linearGradient id="windsurf-a" x1="46" y1="66" x2="210" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#37E6FF"/>
+      <stop offset=".5" stop-color="#72F2A7"/>
+      <stop offset="1" stop-color="#8B7CFF"/>
+    </linearGradient>
+  </defs>
+  <path fill="none" stroke="url(#windsurf-a)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M44 157c26-62 48-62 66 0 10 33 24 33 36 0 18-51 40-51 66 0"/>
+  <path fill="none" stroke="#F6F8FF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity=".9" d="M61 149c18-39 32-38 45 4 14 46 38 48 56 1 13-35 25-38 41-5"/>
+</svg>

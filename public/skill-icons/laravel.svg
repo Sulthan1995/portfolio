@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <path fill="#FF2D20" d="M34 76l62-36 62 36v72l-62 36-62-36V76zm62-15L54 85v52l42 24 42-24V85L96 61z"/>
+  <path fill="#FF2D20" opacity=".75" d="M160 76l62-36v72l-62 36V76zm20 12v32l22-13V75l-22 13z"/>
+  <path fill="#FF2D20" opacity=".6" d="M160 184l62-36v72l-62 36v-72zm20 12v32l22-13v-32l-22 13z"/>
+</svg>

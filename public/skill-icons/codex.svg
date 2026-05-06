@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Codex">
+  <defs>
+    <linearGradient id="codex-a" x1="58" y1="50" x2="198" y2="206" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F5F7FF"/>
+      <stop offset=".52" stop-color="#8FA3FF"/>
+      <stop offset="1" stop-color="#26D8C5"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#codex-a)" d="M128 26 50 71v114l78 45 78-45V71L128 26Zm0 25 56 32v64l-28-16V99l-28-16-28 16v32l-28 16V83l56-32Zm0 64 28 16v32l-28 16-28-16v-32l28-16Zm-56 58 28-16 28 16 28-16 28 16-56 32-56-32Z"/>
+  <path fill="#F5F7FF" opacity=".72" d="M128 83 100 99v32l28-16 28 16V99l-28-16Z"/>
+</svg>
